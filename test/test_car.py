@@ -10,8 +10,19 @@ from engine_factory import WilloughbyEngine
 from battery_factory import SpindlerBattery
 from battery_factory import NubbinBattery
 from car_factory import Car_factory
+from tire_factory import Carrigan_tires
+from tire_factory import Octoprime_tires
 import engine_factory
 import battery_factory
+
+class Test_tire(unittest.TestCase):
+    def test_Carrigan_tires(self):
+        carrigan = Carrigan_tires(0.93)
+        self.assertTrue(carrigan.needs_service())
+
+    def test_Octoprime_tires(self):
+        octoprime = Octoprime_tires(3.1)
+        self.assertTrue(octoprime.needs_service())
 
 
 class Test_battery(unittest.TestCase):
